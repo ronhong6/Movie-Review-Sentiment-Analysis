@@ -2,8 +2,8 @@ library(text2vec)
 library(glmnet)
 
 myvocab = scan("myvocab.txt", what = character(), quiet = TRUE)
-#train = read.table("train.tsv", stringsAsFactors = FALSE, header = TRUE)
-#test = read.table("test.tsv", stringsAsFactors = FALSE, header = TRUE)
+train = read.table("train.tsv", stringsAsFactors = FALSE, header = TRUE)
+test = read.table("test.tsv", stringsAsFactors = FALSE, header = TRUE)
 
 vectorizer = vocab_vectorizer(create_vocabulary(myvocab, ngram = c(1, 2)))
 it_train = itoken(train$review, preprocessor = tolower,
